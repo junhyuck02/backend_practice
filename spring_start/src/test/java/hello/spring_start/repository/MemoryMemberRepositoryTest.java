@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 // import static 이렇게 하면 클래스 이름없이 메소드를 바로 사용할 수 있음
 
 
