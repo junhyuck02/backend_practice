@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+// import static 이렇게 하면 클래스 이름없이 메소드를 바로 사용할 수 있음
 
 
 class MemoryMemberRepositoryTest {
@@ -31,6 +32,7 @@ class MemoryMemberRepositoryTest {
 
         Member result = repository.findById(member.getId()).get();
         assertThat(member).isEqualTo(result);
+        // assertThat은 검증 대상을 설정한다. isEqualTo는 값을 비교한다
     }
 
     @Test
