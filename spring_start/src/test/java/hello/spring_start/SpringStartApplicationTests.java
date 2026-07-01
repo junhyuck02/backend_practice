@@ -1,13 +1,13 @@
-package selfStudy.inflearn_spring_start;
+package hello.spring_start;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class InflearnSpringStartApplicationTests {
+class SpringStartApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
 
 }

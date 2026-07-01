@@ -1,6 +1,6 @@
-package selfStudy.inflearn_spring_start.repository;
+package hello.spring_start.repository;
 
-import selfStudy.inflearn_spring_start.domain.Member;
+import hello.spring_start.domain.Member;
 
 import java.util.*;
 
@@ -36,4 +36,10 @@ public class MemoryMemberRepository implements MemberRepository {
     public List<Member> findAll() {
         return new ArrayList<>(store.values());
     }
+
+    // 저장소 비우기
+    public void clearStore() {
+        store.clear();
+    }
+
 }

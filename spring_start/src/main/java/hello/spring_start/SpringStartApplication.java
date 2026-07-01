@@ -1,15 +1,15 @@
-package selfStudy.inflearn_spring_start;
+package hello.spring_start;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class InflearnSpringStartApplication {
+public class SpringStartApplication {
 
     public static void main(String[] args) {
 
-        SpringApplication.run(InflearnSpringStartApplication.class, args);
-        
+        SpringApplication.run(SpringStartApplication.class, args);
+
     }
 
 }

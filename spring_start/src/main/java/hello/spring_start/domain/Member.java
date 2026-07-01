@@ -1,4 +1,4 @@
-package selfStudy.inflearn_spring_start.domain;
+package hello.spring_start.domain;
 
 public class Member {
 

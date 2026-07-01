@@ -1,6 +1,6 @@
-package selfStudy.inflearn_spring_start.repository;
+package hello.spring_start.repository;
 
-import selfStudy.inflearn_spring_start.domain.Member;
+import hello.spring_start.domain.Member;
 
 import java.util.List;
 import java.util.Optional;
