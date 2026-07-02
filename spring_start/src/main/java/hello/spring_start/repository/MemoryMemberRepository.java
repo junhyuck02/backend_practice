@@ -1,9 +1,12 @@
 package hello.spring_start.repository;
 
 import hello.spring_start.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
+@Repository
+// 이 클래스를 객체로 만들어서 spring 컨테이너에 넣어둔다
 public class MemoryMemberRepository implements MemberRepository {
     private static Map<Long, Member> store = new HashMap<>();
 
