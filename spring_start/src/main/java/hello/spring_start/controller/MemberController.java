@@ -11,7 +11,7 @@ public class MemberController {
     private final MemberService memberService;
 
     @Autowired
-    // 이 객체에 필요한 다른 객체를 spring 컨테이너에서 찾아와서 자동으로 연결해줌
+    // 이 객체에 필요한 다른 객체를 spring 컨테이너에서 찾아와서 자동으로 연결해줌 
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
     }

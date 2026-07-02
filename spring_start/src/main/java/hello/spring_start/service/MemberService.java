@@ -9,14 +9,14 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service
+// @Service
 // 이 클래스를 객체로 만들어서 spring 컨테이너에 넣어둔다
 public class MemberService {
 
     // 여기서 사용하는 레포와 테스트에서 사용하는 레포가 다른 인스턴스가 아니라 하나의 저장소를 공유
     private final MemberRepository memberRepository;
 
-    @Autowired
+    // @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
