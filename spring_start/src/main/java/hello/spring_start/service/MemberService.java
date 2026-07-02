@@ -8,8 +8,13 @@ import java.util.List;
 import java.util.Optional;
 
 public class MemberService {
-    private final MemberRepository memberRepository = new
-            MemoryMemberRepository();
+
+    // 여기서 사용하는 레포와 테스트에서 사용하는 레포가 다른 인스턴스가 아니라 하나의 저장소를 공유
+    private final MemberRepository memberRepository;
+
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     // 회원 가입
     public Long join(Member member) {
