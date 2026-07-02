@@ -32,7 +32,7 @@ public class HelloController {
     // API 예시
     @GetMapping("hello-string")
     @ResponseBody
-    // view를 거치지 않고 HTTP의 body에 내가 데이터를 직접 넣어주겠다
+    // ResponseBody: view를 거치지 않고 HTTP의 body에 내가 데이터를 직접 넣어주겠다
     public String helloString(@RequestParam("name") String name) {
         return "hello " + name;
     }
