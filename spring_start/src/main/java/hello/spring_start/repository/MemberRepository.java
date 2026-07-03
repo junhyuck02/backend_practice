@@ -5,6 +5,7 @@ import hello.spring_start.domain.Member;
 import java.util.List;
 import java.util.Optional;
 
+// 회원을 저장하는 역할
 public interface MemberRepository {
 
     // 회원이 저장소에 저장됨

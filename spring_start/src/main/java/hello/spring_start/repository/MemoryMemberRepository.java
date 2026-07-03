@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
+// 회원을 저장하는 구현을 메모리에
 // @Repository
 // 이 클래스를 객체로 만들어서 spring 컨테이너에 넣어둔다
 public class MemoryMemberRepository implements MemberRepository {
