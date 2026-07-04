@@ -2,11 +2,9 @@ package hello.spring_start;
 
 // 자바 코드로 직접 스프링 빈 등록하기
 
-import hello.spring_start.repository.JdbcMemberRepository;
-import hello.spring_start.repository.JdbcTemplateMemberRepository;
-import hello.spring_start.repository.MemberRepository;
-import hello.spring_start.repository.MemoryMemberRepository;
+import hello.spring_start.repository.*;
 import hello.spring_start.service.MemberService;
+import jakarta.persistence.EntityManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -16,9 +14,11 @@ import javax.sql.DataSource;
 // 여기에 스프링 빈을 직접 등록하는 설정 코드를 작성할 테니 여기서 빈을 찾아서 등록해달라고 요청
 public class SpringConfig {
     private final DataSource dataSource;
+    private final EntityManager em;
 
-    public SpringConfig(DataSource dataSource) {
+    public SpringConfig(DataSource dataSource, EntityManager em) {
         this.dataSource = dataSource;
+        this.em = em;
     }
 
     @Bean
@@ -31,6 +31,18 @@ public class SpringConfig {
     public MemberRepository memberRepository() {
         // return new MemoryMemberRepository();
         // return new JdbcMemberRepository(dataSource);
-        return new JdbcTemplateMemberRepository(dataSource);
+        // return new JdbcTemplateMemberRepository(dataSource);
+        return new JpaMemberRepository(em);
     }
+
+//    private final MemberRepository memberRepository;
+//    public SpringConfig(MemberRepository memberRepository) {
+//        this.memberRepository = memberRepository;
+//    }
+//    @Bean
+//    public MemberService memberService() {
+//        return new MemberService(memberRepository);
+//    }
+    // ????????
 }
+

@@ -5,10 +5,13 @@ import hello.spring_start.repository.MemberRepository;
 import hello.spring_start.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
+@Transactional
+// 트랜잭션을 이용해서 보호구역을 적용하겠다
 // @Service
 // 이 클래스를 객체로 만들어서 spring 컨테이너에 넣어둔다
 public class MemberService {
