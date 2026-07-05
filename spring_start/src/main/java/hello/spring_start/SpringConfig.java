@@ -2,6 +2,7 @@ package hello.spring_start;
 
 // 자바 코드로 직접 스프링 빈 등록하기
 
+import hello.spring_start.aop.TimeTraceAop;
 import hello.spring_start.repository.*;
 import hello.spring_start.service.MemberService;
 import jakarta.persistence.Entity;
@@ -31,7 +32,7 @@ public class SpringConfig {
     //        this.em = em;
     //    }
     private final MemberRepository memberRepository;
-    
+
     @Autowired
     public SpringConfig(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
@@ -44,6 +45,7 @@ public class SpringConfig {
         return new MemberService(memberRepository);
     }
 
+
 //    @Bean
 //    public MemberRepository memberRepository() {
 //         return new MemoryMemberRepository();
@@ -51,5 +53,11 @@ public class SpringConfig {
 //         return new JdbcTemplateMemberRepository(dataSource);
 //          return new JpaMemberRepository(em);
 //    }
+
+    @Bean
+    // aop를 빈으로 등록. @Component를 해도되긴하는데 보통 등록해서 인지하게끔 함
+    public TimeTraceAop timeTraceAop() {
+        return new TimeTraceAop();
+    }
 }
 

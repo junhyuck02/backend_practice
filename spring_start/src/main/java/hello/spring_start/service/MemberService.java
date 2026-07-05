@@ -24,8 +24,21 @@ public class MemberService {
         this.memberRepository = memberRepository;
     }
 
+    // 시간 조회 일일히 하기 귀찮으니까 aop 사용
+
     // 회원 가입
     public Long join(Member member) {
+        // 회원 가입 시간 측정
+//        long start = System.currentTimeMillis();
+//        try {
+//            validateDuplicateMember(member);
+//            memberRepository.save(member);
+//            return member.getId();
+//        } finally {
+//            long finish = System.currentTimeMillis();
+//            long timeMs = finish - start;
+//            System.out.println("join " + timeMs + "ms");
+//        }
         validateDuplicateMember(member);
         memberRepository.save(member);
         return member.getId();
@@ -43,6 +56,15 @@ public class MemberService {
 
     // 전체 회원 조회
     public List<Member> findMembers() {
+        // 회원 조회 시간 측정
+//        long start = System.currentTimeMillis();
+//        try {
+//            return memberRepository.findAll();
+//        } finally {
+//            long finish = System.currentTimeMillis();
+//            long timeMs = finish - start;
+//            System.out.println("findMembers " + timeMs + "ms");
+//        }
         return memberRepository.findAll();
     }
 
