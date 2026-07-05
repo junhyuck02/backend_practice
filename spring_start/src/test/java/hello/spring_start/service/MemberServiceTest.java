@@ -5,6 +5,7 @@ import hello.spring_start.repository.MemoryMemberRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.test.annotation.Commit;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -31,6 +32,8 @@ class MemberServiceTest {
 
     // 테스트 코드는 한글로 작성해도됨
     @Test
+    @Commit
+    // 테스트 코드에서 db를 조작했을 때, 테스트가 끝나도 그 데이터를 db에 영구적으로 반영하는 역할
     void 회원가입() {
         // given 뭔가가 주어졌는데
         Member member = new Member();
