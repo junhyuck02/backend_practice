@@ -40,12 +40,12 @@ public class MemberController {
     // form 태그는 method 기본값이 GET임
     // POST 메소드는 주로 데이터를 생성하거나 변경하는 등 서버 상태를 변화시키는 요청에 사용된다. GET은 주로 정보 조회에 쓰인다
     // @GetMapping: 서버에서 데이터를 가져와 보여주기만 할 때 (조회)
-    // @PostMapping: 서버에 데이터를 전송해서 저장하거나 변경할 때 (쓰기/수정)
+    // @PostMapping: 서버에 데이터를 전송해서 저장하거나 변경할 때 (쓰기/수정) -> 사용자로부터 데이터를 입력받아 서버로 보낼 때 사용
 
     @GetMapping("/members")
     public String list(Model model) {
         List<Member> members = memberService.findMembers();
-    
+
         model.addAttribute("members", members);
         return "members/memberList";
     }

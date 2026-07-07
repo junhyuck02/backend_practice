@@ -14,7 +14,9 @@ public class HelloController {
     // 웹 브라우저에서 /hello라는 URL로 HTTP GET 요청이 들어오면, 바로 아래에 있는 hello 메서드를 실행
     public String hello(Model model) {
         model.addAttribute("data", "hello spring!!!!");
-        // model 객체에 data라는 이름의 키에 값을 저장한다
+        // addAttribute: 저장이 아니라 전달용임, 임시 메모리에 데이터를 담아두는 거지 db에 저장하는게 아님
+        // 바인딩: 데이터를 뷰와 연결한다
+        // 뷰에 전달하시 위해 model 객체에 데이터를 담는다, 모델에 데이터를 바인딩한다
         return "hello";
         // View Resolver에게 hello라는 이름의 화면을 찾아서 띄우라는 것
     }
@@ -32,7 +34,7 @@ public class HelloController {
     // API 예시
     @GetMapping("hello-string")
     @ResponseBody
-    // ResponseBody: view를 거치지 않고 HTTP의 body에 내가 데이터를 직접 넣어주겠다
+    // ResponseBody: view를 거치지 않고 HTTP의 body에 내가 데이터를 직접 넣어주겠다 - viewResolver를 사용하지 않음
     public String helloString(@RequestParam("name") String name) {
         return "hello " + name;
     }

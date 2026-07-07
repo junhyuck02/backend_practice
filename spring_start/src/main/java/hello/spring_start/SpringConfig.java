@@ -38,6 +38,7 @@ public class SpringConfig {
         this.memberRepository = memberRepository;
     }
 
+    // DI 방식
     @Bean
     // 이 메서드에서 나오는 결과물(객체)을 spring 컨테이너에 담아서 빈으로 관리하라고 요청
     public MemberService memberService() {
