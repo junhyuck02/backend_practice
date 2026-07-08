@@ -11,7 +11,8 @@ import java.util.List;
 import java.util.Optional;
 
 @Transactional
-// 트랜잭션을 이용해서 보호구역을 적용하겠다
+// 모든 작업을 하나의 트랜잭션으로 묶어서 처리하겠다
+// 잘되면 반영, 안되면 롤백
 // @Service
 // 이 클래스를 객체로 만들어서 spring 컨테이너에 넣어둔다
 public class MemberService {
