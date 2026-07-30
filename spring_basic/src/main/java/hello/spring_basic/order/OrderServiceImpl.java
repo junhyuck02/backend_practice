@@ -12,6 +12,7 @@ public class OrderServiceImpl implements OrderService{
     private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
 
     @Override
+    // 회원 조회 + 할인 계산 + 주문 생성
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
         Member member = memberRepository.findById(memberId);
         int discountPrice = discountPolicy.discount(member, itemPrice);
