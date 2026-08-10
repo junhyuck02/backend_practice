@@ -9,6 +9,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+// 주문과 할인 정책 테스트
 public class OrderServiceTest {
 
     MemberService memberService;

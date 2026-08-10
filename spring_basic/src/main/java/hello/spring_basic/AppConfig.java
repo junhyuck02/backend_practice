@@ -11,7 +11,8 @@ import hello.spring_basic.order.OrderServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+// AppConfig 스프링 기반으로 변경
+@Configuration // AppConfig에 설정을 구성한다는 뜻
 public class AppConfig {
 
     @Bean

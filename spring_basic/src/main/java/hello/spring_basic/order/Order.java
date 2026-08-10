@@ -1,5 +1,6 @@
 package hello.spring_basic.order;
 
+// 주문 엔티티
 public class Order {
 
     private Long memberId;

@@ -1,5 +1,6 @@
 package hello.spring_basic.member;
 
+// 회원 엔티티
 public class Member {
     private Long id;
     private String name;

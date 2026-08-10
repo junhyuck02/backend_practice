@@ -4,7 +4,12 @@ import hello.spring_basic.discount.DiscountPolicy;
 import hello.spring_basic.member.Member;
 import hello.spring_basic.member.MemberRepository;
 
+// 주문 서비스 구현체
 public class OrderServiceImpl implements OrderService{
+
+//    private final MemberRepository memberRepository = new MemoryMemberRepository();
+//    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
+//    private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
 
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;

@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+// 컨테이너에 등록된 모든 빈 조회
 public class ApplicationContextInfoTest {
 
     AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
@@ -24,6 +25,8 @@ public class ApplicationContextInfoTest {
             System.out.println("name=" + beanDefinitionName + " object=" + bean);
             // 빈 이름과 객체(toString() 결과, 보통 클래스명@해시코드)를 출력
         }
+//        ac.getBeanDefinitionNames(): 스프링에 등록된 모든 빈 이름을 조회한다.
+//        ac.getBean(): 빈 이름으로 빈 객체(인스턴스)를 조회한다.
     }
     // 컨테이너 안에 어떤 빈들이 다 들어있는지(내 빈 + 스프링 내부 빈 포함) 전부 확인하는 테스트
 

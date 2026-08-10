@@ -8,11 +8,15 @@ import hello.spring_basic.order.OrderService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+// 주문과 할인 정책 실행
+// 별로 안좋은 방법이니 테스트 쓰기
 public class OrderApp {
     public static void main(String[] args) {
 //        AppConfig appConfig = new AppConfig();
 //        MemberService memberService = appConfig.memberService();
 //        OrderService orderService = appConfig.orderService();
+
+        // OrderApp에 스프링 컨테이너 적용
 
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
         MemberService memberService = applicationContext.getBean("memberService", MemberService.class);

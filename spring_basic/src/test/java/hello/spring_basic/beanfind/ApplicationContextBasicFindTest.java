@@ -10,6 +10,7 @@ import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import static org.assertj.core.api.Assertions.*;
 
+// 스프링 컨테이너에서 스프링 빈을 찾는 가장 기본적인 조회 방법
 class ApplicationContextBasicFindTest {
     AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
 
@@ -42,7 +43,7 @@ class ApplicationContextBasicFindTest {
         Assertions.assertThrows(NoSuchBeanDefinitionException.class, () ->
                 ac.getBean("xxxxx", MemberService.class));
         // assertThrows: 두 번째 인자로 넘긴 람다(() -> ...)를 실행했을 때,
-        // 첫 번째 인자로 지정한 예외(NoSuchBeanDefinitionException)가 발생하는지 검증하는 JUnit 메서드
+        // 메소드 설명: 첫 번째 인자로 지정한 예외(NoSuchBeanDefinitionException)가 발생하는지 검증하는 JUnit 메서드
     }
 }
 
