@@ -15,6 +15,7 @@ public class AutowiredTest {
 
     @Test
     void AutowiredOption() {
+        @SuppressWarnings({ "resource", "unused" })
         ApplicationContext ac = new AnnotationConfigApplicationContext(TestBean.class);
     }
 
@@ -22,19 +23,19 @@ public class AutowiredTest {
 
         // 주입할 스프링 빈이 없으면 수정자(Setter) 메서드 자체가 호출되지 않는다
         @Autowired(required = false)
-        public void setNoBean1(Member noBean1){
+        public void setNoBean1(Member noBean1) {
             System.out.println("noBean1 = " + noBean1);
         }
 
         // 주입할 대상이 없어도 메서드가 호출되며, null이 파라미터로 주입된다
         @Autowired(required = false)
-        public void setNoBean2(@Nullable Member noBean2){
+        public void setNoBean2(@Nullable Member noBean2) {
             System.out.println("noBean2 = " + noBean2);
         }
 
         // 주입할 대상이 없으면 Optional.empty가 주입된 상태로 메서드가 호출된다
         @Autowired
-        public void setNoBean3(Optional<Member> noBean3){
+        public void setNoBean3(Optional<Member> noBean3) {
             System.out.println("noBean3 = " + noBean3);
         }
     }

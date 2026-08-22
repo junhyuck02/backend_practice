@@ -11,6 +11,7 @@ import static org.assertj.core.api.Assertions.*;
 public class AutoAppConfigTest {
     @Test
     void basicScan() {
+        @SuppressWarnings("resource")
         ApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class);
 
         MemberService memberService = ac.getBean(MemberService.class);

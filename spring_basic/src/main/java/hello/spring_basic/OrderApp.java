@@ -12,12 +12,13 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 // 별로 안좋은 방법이니 테스트 쓰기
 public class OrderApp {
     public static void main(String[] args) {
-//        AppConfig appConfig = new AppConfig();
-//        MemberService memberService = appConfig.memberService();
-//        OrderService orderService = appConfig.orderService();
+        // AppConfig appConfig = new AppConfig();
+        // MemberService memberService = appConfig.memberService();
+        // OrderService orderService = appConfig.orderService();
 
         // OrderApp에 스프링 컨테이너 적용
 
+        @SuppressWarnings("resource")
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
         MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
         OrderService orderService = applicationContext.getBean("orderService", OrderService.class);

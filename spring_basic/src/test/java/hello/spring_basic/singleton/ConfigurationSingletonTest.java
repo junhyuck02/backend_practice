@@ -14,6 +14,7 @@ public class ConfigurationSingletonTest {
 
     @Test
     void configurationTest() {
+        @SuppressWarnings("resource")
         ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
 
         MemberServiceImpl memberService = ac.getBean("memberService", MemberServiceImpl.class);
@@ -33,6 +34,7 @@ public class ConfigurationSingletonTest {
 
     @Test
     void configurationDeep() {
+        @SuppressWarnings("resource")
         ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
 
         AppConfig bean = ac.getBean(AppConfig.class);

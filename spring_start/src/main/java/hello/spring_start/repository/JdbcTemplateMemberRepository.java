@@ -8,8 +8,8 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 
 import javax.sql.DataSource;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+// import java.sql.ResultSet;
+// import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,7 +31,8 @@ public class JdbcTemplateMemberRepository implements MemberRepository {
         // SimpleJdbcInsert 클래스: 복잡한 SQL문을 직접 작성하지 않아도 데이터를 삽입하는 작업을 단순화해준다
         // jdbcTemplate을 생성자에 넣어 데이터베이스 연결 정보를 공유
         jdbcInsert.withTableName("member").usingGeneratedKeyColumns("id");
-        // 데이터를 저장할 테이블 이름을 member로 지정, 1,2,3.. 번호가 생기는 col의 이름을 id로 짓는 동시에 데이터를 넣을 때마다 id 칸에 들어간 값을 알려달라고 요청
+        // 데이터를 저장할 테이블 이름을 member로 지정, 1,2,3.. 번호가 생기는 col의 이름을 id로 짓는 동시에 데이터를 넣을 때마다
+        // id 칸에 들어간 값을 알려달라고 요청
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("name", member.getName());
         Number key = jdbcInsert.executeAndReturnKey(new MapSqlParameterSource(parameters));
@@ -80,5 +81,3 @@ public class JdbcTemplateMemberRepository implements MemberRepository {
         };
     }
 }
-
-

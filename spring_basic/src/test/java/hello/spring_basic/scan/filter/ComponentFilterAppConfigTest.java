@@ -16,18 +16,16 @@ public class ComponentFilterAppConfigTest {
 
     @Test
     void filterScan() {
+        @SuppressWarnings("resource")
         ApplicationContext ac = new AnnotationConfigApplicationContext(ComponentFilterAppConfig.class);
         BeanA beanA = ac.getBean("beanA", BeanA.class);
         assertThat(beanA).isNotNull();
 
-        assertThrows(NoSuchBeanDefinitionException.class,() -> ac.getBean("beanB", BeanB.class));
+        assertThrows(NoSuchBeanDefinitionException.class, () -> ac.getBean("beanB", BeanB.class));
     }
 
     @Configuration
-    @ComponentScan(
-            includeFilters = @Filter(type = FilterType.ANNOTATION, classes = MyIncludeComponent.class),
-            excludeFilters = @Filter(type = FilterType.ANNOTATION, classes = MyExcludeComponent.class)
-    )
+    @ComponentScan(includeFilters = @Filter(type = FilterType.ANNOTATION, classes = MyIncludeComponent.class), excludeFilters = @Filter(type = FilterType.ANNOTATION, classes = MyExcludeComponent.class))
     static class ComponentFilterAppConfig {
 
     }

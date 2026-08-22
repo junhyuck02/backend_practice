@@ -1,7 +1,7 @@
 package hello.spring_start.repository;
 
 import hello.spring_start.domain.Member;
-import org.springframework.stereotype.Repository;
+// import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
@@ -13,7 +13,6 @@ public class MemoryMemberRepository implements MemberRepository {
 
     // 회원 가입 시마다 0,1,2.. key갑을 생성해주는 애
     private static long sequence = 0L;
-
 
     @Override
     public Member save(Member member) {

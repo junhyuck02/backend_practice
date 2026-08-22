@@ -2,9 +2,9 @@ package hello.spring_start.service;
 
 import hello.spring_start.domain.Member;
 import hello.spring_start.repository.MemberRepository;
-import hello.spring_start.repository.MemoryMemberRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+// import hello.spring_start.repository.MemoryMemberRepository;
+// import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -30,16 +30,16 @@ public class MemberService {
     // 회원 가입
     public Long join(Member member) {
         // 회원 가입 시간 측정
-//        long start = System.currentTimeMillis();
-//        try {
-//            validateDuplicateMember(member);
-//            memberRepository.save(member);
-//            return member.getId();
-//        } finally {
-//            long finish = System.currentTimeMillis();
-//            long timeMs = finish - start;
-//            System.out.println("join " + timeMs + "ms");
-//        }
+        // long start = System.currentTimeMillis();
+        // try {
+        // validateDuplicateMember(member);
+        // memberRepository.save(member);
+        // return member.getId();
+        // } finally {
+        // long finish = System.currentTimeMillis();
+        // long timeMs = finish - start;
+        // System.out.println("join " + timeMs + "ms");
+        // }
         validateDuplicateMember(member);
         memberRepository.save(member);
         return member.getId();
@@ -58,14 +58,14 @@ public class MemberService {
     // 전체 회원 조회
     public List<Member> findMembers() {
         // 회원 조회 시간 측정
-//        long start = System.currentTimeMillis();
-//        try {
-//            return memberRepository.findAll();
-//        } finally {
-//            long finish = System.currentTimeMillis();
-//            long timeMs = finish - start;
-//            System.out.println("findMembers " + timeMs + "ms");
-//        }
+        // long start = System.currentTimeMillis();
+        // try {
+        // return memberRepository.findAll();
+        // } finally {
+        // long finish = System.currentTimeMillis();
+        // long timeMs = finish - start;
+        // System.out.println("findMembers " + timeMs + "ms");
+        // }
         return memberRepository.findAll();
     }
 

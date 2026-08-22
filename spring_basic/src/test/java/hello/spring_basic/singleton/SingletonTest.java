@@ -49,6 +49,7 @@ public class SingletonTest {
     @Test
     @DisplayName("스프링 컨테이너와 싱글톤")
     void springContainer() {
+        @SuppressWarnings("resource")
         ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
 
         // 1. 호출할 때마다 객체를 생성하는지 조회

@@ -5,32 +5,32 @@ package hello.spring_start;
 import hello.spring_start.aop.TimeTraceAop;
 import hello.spring_start.repository.*;
 import hello.spring_start.service.MemberService;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EntityManager;
+// import jakarta.persistence.Entity;
+// import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import javax.sql.DataSource;
+// import javax.sql.DataSource;
 
 @Configuration
 // 여기에 스프링 빈을 직접 등록하는 설정 코드를 작성할 테니 여기서 빈을 찾아서 등록해달라고 요청
 public class SpringConfig {
 
-    //    private final DataSource dataSource;
-    //    private final EntityManager em;
+    // private final DataSource dataSource;
+    // private final EntityManager em;
     //
-    //    public SpringConfig(DataSource dataSource, EntityManager em) {
-    //        this.dataSource = dataSource;
-    //        this.em = em;
-    //    }
+    // public SpringConfig(DataSource dataSource, EntityManager em) {
+    // this.dataSource = dataSource;
+    // this.em = em;
+    // }
     // ---------------------------------
-    //    private EntityManager em;
+    // private EntityManager em;
     //
-    //    @Autowired
-    //    public SpringConfig(EntityManager em) {
-    //        this.em = em;
-    //    }
+    // @Autowired
+    // public SpringConfig(EntityManager em) {
+    // this.em = em;
+    // }
     private final MemberRepository memberRepository;
 
     @Autowired
@@ -46,14 +46,13 @@ public class SpringConfig {
         return new MemberService(memberRepository);
     }
 
-
-//    @Bean
-//    public MemberRepository memberRepository() {
-//         return new MemoryMemberRepository();
-//         return new JdbcMemberRepository(dataSource);
-//         return new JdbcTemplateMemberRepository(dataSource);
-//          return new JpaMemberRepository(em);
-//    }
+    // @Bean
+    // public MemberRepository memberRepository() {
+    // return new MemoryMemberRepository();
+    // return new JdbcMemberRepository(dataSource);
+    // return new JdbcTemplateMemberRepository(dataSource);
+    // return new JpaMemberRepository(em);
+    // }
 
     @Bean
     // aop를 빈으로 등록. @Component를 해도되긴하는데 보통 등록해서 인지하게끔 함
@@ -61,4 +60,3 @@ public class SpringConfig {
         return new TimeTraceAop();
     }
 }
-

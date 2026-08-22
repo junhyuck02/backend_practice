@@ -4,7 +4,7 @@ import hello.spring_basic.annotation.MainDiscountPolicy;
 import hello.spring_basic.discount.DiscountPolicy;
 import hello.spring_basic.member.Member;
 import hello.spring_basic.member.MemberRepository;
-import lombok.RequiredArgsConstructor;
+// import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -12,18 +12,20 @@ import org.springframework.stereotype.Component;
 // 주문 서비스 구현체
 // @RequiredArgsConstructor
 // final 붙은걸 가지고 생성자를 자동으로 만들어주는 롬복 애너테이션
-public class OrderServiceImpl implements OrderService{
+public class OrderServiceImpl implements OrderService {
 
-//    private final MemberRepository memberRepository = new MemoryMemberRepository();
-//    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
-//    private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
+    // private final MemberRepository memberRepository = new
+    // MemoryMemberRepository();
+    // private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
+    // private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
 
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
     @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
-    // public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy ratediscountPolicy) {
+        // public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy
+        // ratediscountPolicy) {
         // ~ @Qualifier("mainDiscountPolicy") DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         // this.discountPolicy = ratediscountPolicy;

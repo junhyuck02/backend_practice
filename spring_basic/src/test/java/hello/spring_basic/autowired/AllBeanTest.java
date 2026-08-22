@@ -18,6 +18,7 @@ public class AllBeanTest {
 
     @Test
     void findAllBean() {
+        @SuppressWarnings("resource")
         ApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class, DiscountService.class);
 
         DiscountService discountService = ac.getBean(DiscountService.class);
@@ -34,6 +35,7 @@ public class AllBeanTest {
 
     static class DiscountService {
         private final Map<String, DiscountPolicy> policyMap;
+        @SuppressWarnings("unused")
         private final List<DiscountPolicy> policies;
 
         @Autowired

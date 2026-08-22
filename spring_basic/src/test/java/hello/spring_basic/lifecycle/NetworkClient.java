@@ -2,8 +2,8 @@ package hello.spring_basic.lifecycle;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.InitializingBean;
+// import org.springframework.beans.factory.DisposableBean;
+// import org.springframework.beans.factory.InitializingBean;
 
 // public class NetworkClient implements InitializingBean, DisposableBean {
 public class NetworkClient {
@@ -32,24 +32,22 @@ public class NetworkClient {
         System.out.println("close " + url);
     }
 
-
     // 인터페이스를 사용한 초기화, 종료 방법은 요즘은 잘 사용하지 않는다
 
-
-//    @Override
-//    public void afterPropertiesSet() throws Exception {
-//        // 스프링이 빈을 생성하고 의존 관계 주입이 끝나면 호출
-//        System.out.println("NetworkClient.afterPropertiesSet");
-//        connect();
-//        call("초기화 연결 메시지");
-//    }
-//
-//    @Override
-//    public void destroy() throws Exception {
-//        // 애플리케이션이 종료되어 스프링이 빈을 소멸하기 직전 호출
-//        System.out.println("NetworkClient.destroy");
-//        disconnect();
-//    }
+    // @Override
+    // public void afterPropertiesSet() throws Exception {
+    // // 스프링이 빈을 생성하고 의존 관계 주입이 끝나면 호출
+    // System.out.println("NetworkClient.afterPropertiesSet");
+    // connect();
+    // call("초기화 연결 메시지");
+    // }
+    //
+    // @Override
+    // public void destroy() throws Exception {
+    // // 애플리케이션이 종료되어 스프링이 빈을 소멸하기 직전 호출
+    // System.out.println("NetworkClient.destroy");
+    // disconnect();
+    // }
 
     @PostConstruct
     public void init() {
